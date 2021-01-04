@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .type {
+    @apply capitalize text-center rounded-md m-1 px-1 py-1 cursor-default shadow-lg
+  }
+}
