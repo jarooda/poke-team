@@ -1,47 +1,26 @@
-import React from 'react'
+import useFetch from '../hooks/useFetch'
 import Poke from '../components/Poke'
+import Loading from '../components/Loading'
 
-class Container extends React.Component {
-  constructor () {
-    super()
-    this.state = {
-      pokemons: null
-    }
-  }
+function Container () {
+  const {data: pokemons, loading} = useFetch('https://pokeapi.co/api/v2/pokemon?limit=13&offset=0') // ?limit=156&offset=493 
 
-  componentDidMount() {
-    this.fetchPoke()
-  }
-
-  fetchPoke = () => {
-    // fetch('https://pokeapi.co/api/v2/pokemon?limit=156&offset=493')
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=809')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          pokemons: data.results
-        })
-    })
-  }
-  
-  render() {
-    const {pokemons} = this.state
+  if (loading) {
     return (
-      <div className="sm:w-10/12 w-full grid sm:grid-cols-3 lg:grid-cols-6 grid-cols-2 gap-2 p-2">
-        {
-          !pokemons
-          ?
-          <p>Loading...</p>
-          :
-          pokemons.map((poke, idx) => {
-            return (
-              <Poke key={idx} poke={poke} />
-            )
-          })
-        }
-      </div>
+      <Loading />
     )
   }
+  return (
+    <div className="sm:w-10/12 w-full grid sm:grid-cols-3 lg:grid-cols-6 grid-cols-2 gap-2 p-2">
+      {
+        pokemons.map((poke, idx) => {
+          return (
+            <Poke key={idx} poke={poke} />
+          )
+        })
+      }
+    </div>
+  )
 }
 
 export default Container

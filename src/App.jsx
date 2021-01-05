@@ -4,21 +4,23 @@ import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
 import Container from './pages/Container'
 import PokeDetail from './pages/PokeDetail'
+import TeamDetail from './pages/TeamDetail'
 
-class App extends React.Component {
-  render() {
-    return (
-      <>
-      <Header />
-      <div className="flex container mx-auto flex-wrap sm:flex-nowrap sm:mt-3">
-        {/* <Container /> */}
-        <PokeDetail />
-        <Sidebar />
-      </div>
-      <Footer />
-      </>
-    )
-  }
+function App () {
+  return (
+    <>
+    <Header />
+    <div className="flex container mx-auto flex-wrap sm:flex-nowrap sm:mt-3">
+
+      {/* <Container /> */}
+      {/* <TeamDetail /> */}
+      <PokeDetail />
+
+      <Sidebar />
+    </div>
+    <Footer />
+    </>
+  )
 }
 
 export default App;
