@@ -1,8 +1,6 @@
 import React, { useState, useEffect }  from 'react'
-import useFetch from '../hooks/useFetch'
-import Loading from './Loading'
-import Type from '../components/Type'
-import Data from '../components/Data'
+import { Type, Loading, Data } from './index'
+import { useFetch } from '../hooks'
 
 function TeamCard (props) {
   const {data: pokemon, loading} = useFetch(props.url)

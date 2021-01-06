@@ -1,6 +1,6 @@
-import useFetch from '../hooks/useFetch'
-import Poke from '../components/Poke'
-import Loading from '../components/Loading'
+import React from 'react'
+import { useFetch } from '../hooks'
+import { Poke, Loading } from '../components'
 
 function Container () {
   const {data: pokemons, loading} = useFetch('https://pokeapi.co/api/v2/pokemon?limit=13&offset=0') // ?limit=156&offset=493 

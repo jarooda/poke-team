@@ -1,21 +1,27 @@
 import React from 'react'
-import Header from './components/Header'
-import Sidebar from './components/Sidebar'
-import Footer from './components/Footer'
-import Container from './pages/Container'
-import PokeDetail from './pages/PokeDetail'
-import TeamDetail from './pages/TeamDetail'
+import { Header, Sidebar, Footer } from './components'
+import { Container, PokeDetail, TeamDetail, NotFound } from './pages'
+import { Switch, Route } from "react-router-dom";
 
 function App () {
   return (
     <>
     <Header />
     <div className="flex container mx-auto flex-wrap sm:flex-nowrap sm:mt-3">
-
-      {/* <Container /> */}
-      {/* <TeamDetail /> */}
-      <PokeDetail />
-
+      <Switch>
+        <Route path="/team">
+          <TeamDetail />
+        </Route>
+        <Route path="/pokemon/:id">
+          <PokeDetail />
+        </Route>
+        <Route exact path="/">
+          <Container />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
       <Sidebar />
     </div>
     <Footer />
