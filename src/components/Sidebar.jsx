@@ -2,13 +2,13 @@ import React, {useState, useEffect} from 'react'
 import { TeamSidebar, Nothing } from './index'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { searchPoke } from '../store/action'
+import { searchPoke } from '../actions/pokeAction'
 
 function Sidebar () {
   const [dark, setDark] = useState(false)
   const dispatch = useDispatch()
-  const teams = useSelector(state => state.teams)
-  const search = useSelector(state => state.search)
+  const teams = useSelector(state => state.team.teams)
+  const search = useSelector(state => state.pokemon.search)
 
   const toggleDark = () => {
     if (dark) {

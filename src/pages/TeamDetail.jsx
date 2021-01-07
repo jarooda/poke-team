@@ -3,7 +3,7 @@ import { TeamCard, Nothing } from '../components'
 import { useSelector } from 'react-redux'
 
 function TeamDetail () {
-  const teams = useSelector(state => state.teams)
+  const teams = useSelector(state => state.team.teams)
 
   if (teams.length === 0) {
     return <Nothing message="Create Some Team First"/>
