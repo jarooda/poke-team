@@ -10,7 +10,7 @@ function Container () {
   const dispatch = useDispatch()
   const search = useSelector(state => state.pokemon.search)
   const [filtered, setFiltered] = useState()
-  const [gen] = useState(Array.from({ length: 8}))
+  const [gen] = useState(Array.from({ length: 9 }))
   const isActive = useSelector(state => state.pokemon.isActive)
 
   const changeGen = (gen) => {
@@ -45,7 +45,11 @@ function Container () {
         break;
       case 8:
         dispatch(setActive(8))
-        dispatch(fetchAllPoke('https://pokeapi.co/api/v2/pokemon?limit=89&offset=809'))
+        dispatch(fetchAllPoke('https://pokeapi.co/api/v2/pokemon?limit=96&offset=809'))
+        break;
+      case 9:
+        dispatch(setActive(9))
+        dispatch(fetchAllPoke('https://pokeapi.co/api/v2/pokemon?limit=105&offset=905'))
         break;
       default:
         break;

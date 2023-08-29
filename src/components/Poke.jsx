@@ -13,7 +13,7 @@ function Poke (props) {
     return <Loading />
   }
   return (
-    <div className="border-t-4 border-red-400 dark:border-blue-400 dark:hover:border-blue-200 hover:border-red-200 py-2 w-full flex items-start h-60 justify-center rounded shadow-md">
+    <div className="border-t-4 border-red-400 dark:border-blue-400 dark:hover:border-blue-200 hover:border-red-200 py-2 w-full flex items-start h-auto justify-center rounded shadow-md">
       <div className="w-9/12">
         <div className="flex align-middle md:flex-wrap justify-around">
           <div className="flex flex-col justify-center">
